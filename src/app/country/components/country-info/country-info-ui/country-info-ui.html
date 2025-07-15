@@ -1,0 +1,44 @@
+<!--<section class="mt-5">-->
+<!--  <div class="flex flex-row gap-2 mt-2 mb-2 ">-->
+<!--    <h1 class="text-5xl">{{country().name}}</h1>-->
+<!--    <img [src]="country().flagSvg" [alt]="country().name" class="w-20">-->
+<!--  </div>-->
+<!--  <h1 class="font-thin">{{country().capital }}</h1>-->
+<!--  <h1 class="font-thin">Población: {{country().population | number}}</h1>-->
+<!--</section>-->
+
+<div class="min-h-screen text-base-content">
+  <div class="mx-auto">
+    <!-- Título -->
+    <h1 class="text-5xl font-bold mb-4 flex items-center gap-4">
+      {{ country().name }}
+      <span class="badge badge-secondary text-xl">{{ country().cca2 }}</span>
+    </h1>
+
+    <!-- Subtítulo -->
+    <p class="text-xl text-gray-500 italic mb-8">{{ country().flag }}</p>
+
+    <!-- Imagen de bandera -->
+    <div class="w-full mb-10">
+      <img
+        [src]="country().flagSvg"
+        [alt]="'Flag of ' + country().name"
+        class="w-full max-h-[400px] object-cover rounded-lg shadow"
+      />
+    </div>
+
+    <!-- Información detallada -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Capital</h2>
+        <p class="text-lg">{{ country().capital }}</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Población</h2>
+        <p class="text-lg">{{ country().population | number }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

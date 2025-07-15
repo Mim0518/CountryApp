@@ -1,1 +1,11 @@
-<p>Información acerca de </p>
+@if(countryResource.error()){
+  <app-country-404/>
+}
+
+@if(countryResource.isLoading()){
+  <h1 class="text-3xl">Cargando país</h1>
+}
+
+@if(countryResource.hasValue()){
+  <country-info-ui [country]="countryResource.value()"/>
+}

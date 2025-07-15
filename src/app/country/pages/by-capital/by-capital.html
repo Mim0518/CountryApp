@@ -1,5 +1,9 @@
 <section>
-  <country-search-input placeholder ="Buscar por capital"/>
-  <country-list/>
+  <country-search-input placeholder ="Buscar por capital" (value)="query.set($event)"/>
+  <country-list
+    [countries]="capitalResource.value() ?? []"
+    [errorMessage] ="capitalResource.error()"
+    [isEmpty] ="capitalResource.value()?.length == 0"
+    [isLoading]="capitalResource.isLoading()"
+  />
 </section>
-
